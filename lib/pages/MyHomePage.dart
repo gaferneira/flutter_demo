@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutterdemo/data/entities/Book.dart';
 import 'package:flutterdemo/data/repositories/BooksRepository.dart';
+import 'package:flutterdemo/pages/BookDetailsPage.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key}) : super(key: key);
@@ -55,7 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
       subtitle: new Text('Author: ${book.author}'),
       leading: Image.network(book.coverUrl),
       onTap: () {
-        //TODO Implement see details
+        Navigator.of(context)
+            .pushNamed(BookDetailsPage.routeName, arguments: book);
       },
     );
   }
