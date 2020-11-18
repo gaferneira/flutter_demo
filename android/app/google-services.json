@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "846841138907",
+    "firebase_url": "https://flutterdemo-globant.firebaseio.com",
+    "project_id": "flutterdemo-globant",
+    "storage_bucket": "flutterdemo-globant.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:846841138907:android:e1b9cdfd475d6fa03e86fe",
+        "android_client_info": {
+          "package_name": "com.globant.flutterdemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "846841138907-ipk6l5r603n5k7qiohgg49bf77vh9mj4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB6b7lB0AKEnzRdotklK6_MqgAZ74kYCM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "846841138907-ipk6l5r603n5k7qiohgg49bf77vh9mj4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
