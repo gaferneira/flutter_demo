@@ -42,5 +42,6 @@ end
 
 # add pods for desired Firebase products
 pod 'Firebase/Firestore'
+pod 'FirebaseFirestoreSwift'
 # https://firebase.google.com/docs/ios/setup#available-pods
 
