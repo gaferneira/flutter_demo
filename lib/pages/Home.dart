@@ -1,6 +1,7 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterdemo/pages/PlaceHolderWidget.dart';
+import 'package:flutterdemo/pages/explore/CategoriesPage.dart';
 
 import 'MyHomePage.dart';
 
@@ -15,8 +16,8 @@ class _HomeState extends State<Home>{
   int _currentIndex = 0;
   final List<Widget> _children= [
     MyHomePage(),
-    PlaceHolderWidget(Colors.deepOrange),
-    PlaceHolderWidget(Colors.amberAccent)
+    CategoriesPage(),
+    PlaceHolderWidget(Colors.white)
   ];
 
   @override
@@ -30,8 +31,11 @@ class _HomeState extends State<Home>{
               TabItem(icon: Icons.people, title: 'Profile'),
             ],
             initialActiveIndex : _currentIndex,
-            backgroundColor: Colors.green,
-            style: TabStyle.textIn,
+            style: TabStyle.react,
+            backgroundColor: Colors.white10,
+            color: Colors.black,
+            activeColor: Colors.lightGreen,
+            top: -15,
             onTap: onTabTapped,
         )
     );
