@@ -1,7 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterdemo/pages/BookDetailsPage.dart';
-import 'package:flutterdemo/pages/Home.dart';
+import 'package:flutterdemo/pages/login/AuthViewModel.dart';
+import 'package:flutterdemo/pages/login/LoginPage.dart';
+import 'package:provider/provider.dart';
+
+import 'pages/Home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,9 +20,45 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         // When navigating to the "/" route, build the FirstScreen widget.
-        '/': (context) => Home(),
+        '/': (context) => SplashPage(),
         BookDetailsPage.routeName: (context) => BookDetailsPage(),
       },
+    );
+  }
+}
+
+class SplashPage extends StatelessWidget {
+  final AuthViewModel viewModel = AuthViewModel();
+
+  @override
+  Widget build(BuildContext context) {
+    return ChangeNotifierProvider<AuthViewModel>.value(
+      value: viewModel,
+      child: Consumer(
+        builder: (context, AuthViewModel viewModel, _) {
+          switch (viewModel.status) {
+            case AuthStatus.Unauthenticated:
+              return LoginPage();
+            case AuthStatus.Authenticated:
+              return Home();
+            case AuthStatus.Uninitialized:
+            default:
+              return showSplash();
+          }
+        },
+      ),
+    );
+  }
+
+  Widget showSplash() {
+    return Material(
+      color: Colors.blueAccent,
+      child: Center(
+        child: Text(
+          "Splash",
+          style: TextStyle(color: Colors.black),
+        ),
+      ),
     );
   }
 }
